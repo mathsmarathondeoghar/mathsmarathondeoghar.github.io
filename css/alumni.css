@@ -1,0 +1,157 @@
+/* ================== Container ================== */
+.divFive {
+  padding: 30px 20px;
+  background: #f9fafc;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.headingSec h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.headingSec .highlight {
+  color: #0077ff;
+}
+
+.headingSec p {
+  margin: 0 auto 0px;
+  color: #555;
+}
+
+/* ================== Scroll wrapper ================== */
+.scroll-wrapper {
+  overflow-x: auto;
+  scroll-padding-left: 2000px; /* ensures first card snaps properly */
+  padding-left: 20px;        /* visual spacing for first card */
+}
+
+/* ================== Scrollable Container ================== */
+
+/* Scrollbar styling */
+.scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* ================== Alumni Card ================== */
+.alumni-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: auto; /* dynamically set via JS */
+}
+
+/* Card hover effect */
+.alumni-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Card content */
+.alumni-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.alumni-card .name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.alumni-card .designation {
+  font-size: 0.95rem;
+  color: #0077ff;
+  margin-bottom: 10px;
+}
+
+.alumni-card .short-comment {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 768px) {
+  .scroll-wrapper {
+    padding-left: 15px;
+  }
+
+  .alumni-card {
+    flex: 0 0 80%;
+  }
+}
+
+/* ================== Modal ================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+  text-align: left;
+  max-height: calc(100vh - 120px); /* important */
+  overflow-y: auto;               /* modal-only scroll */
+}
+
+.modal-content h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #444;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+
